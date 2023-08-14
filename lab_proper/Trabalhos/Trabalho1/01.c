@@ -13,7 +13,7 @@ float get_radius()
 void calc_esfera(float r, float *area, float *volume)
 {
     *area = 4 * PI * r * r;
-    *volume = (4/3) * PI * r * r * r;
+    *volume = (4 * PI * r * r * r) / 3;
 }
 
 void show_info(float area, float volume)

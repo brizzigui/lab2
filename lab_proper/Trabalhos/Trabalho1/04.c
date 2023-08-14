@@ -11,9 +11,9 @@ typedef struct usuario Usuario;
 
 void leVetor(int tamanho, Usuario* vet)
 {
-    for (int i = 1; i < tamanho+1; i++)
+    for (int i = 0; i < tamanho; i++)
     {
-        printf("Usuario %d\n", i);
+        printf("Usuario %d\n", i+1);
 
         printf("Sexo (m/f): ", i);
         scanf(" %c", &(vet + i)->sexo);
