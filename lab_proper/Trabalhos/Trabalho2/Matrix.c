@@ -23,11 +23,24 @@ void printMatrix(int m, int n, char** mat){
     printf("Your word formed the following matrix:\n");
     printf("\n");
     for (int i = 0; i < m; i++){
+        if(i==0){
+            printf("   ");
+            for (int j = 0; j < n; j++)
+            {
+                printf("  %02d", j+1);
+            }
+            printf("\n\n");
+            
+        }
         for (int j = 0; j < n; j++){
-            printf("%c", mat[i][j]);
+            if(j==0){
+                printf("%02d   ", i+1);
+            }
+            printf("%c   ", mat[i][j]);
         }
         printf("\n");
-    }    
+    }  
+    printf("\n\n");  
 }
 
 void fillMatrix(int m, int n, char** mat){
@@ -36,7 +49,7 @@ void fillMatrix(int m, int n, char** mat){
     int count = 0;
     printf("Write the characters to fill up the matrix: ");
     scanf(" %[^\n]", auxvect);
-    for (int i = 0; count < m*n; i++){
+    for (int i = 0; i < strlen(auxvect); i++){
         if(auxvect[i] != ' '){
             vect[count]=auxvect[i];
             count++;
@@ -47,7 +60,7 @@ void fillMatrix(int m, int n, char** mat){
 
     for (int i = 0; i < m; i++){
         for (int j = 0; j < n; j++){
-            if (i*n + j > count){ // para não ler onde tem lixo
+            if ((i*n + j) > strlen(vect)){ // para não ler onde tem lixo
                 mat[i][j]=' ';
             }
             
