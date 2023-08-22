@@ -1,8 +1,12 @@
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
+#include <time.h>
 #include <stdbool.h>
-#include "Matrix.c"
-#include "Search_words.c"
+#include <string.h>
+
+#include "Search_words.h"
+#include "Matrix.h"
 
 int main(){
     int m, n;

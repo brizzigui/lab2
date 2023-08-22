@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "Matrix.h"
+
 void zeroAtEnd(int m, int n, char** mat){
 
     for (int i = 0; i < m; i++){
