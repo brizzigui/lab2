@@ -23,4 +23,20 @@ List* list_create();
 
 void list_print();
 
+List* list_flip_values(List* l);
+
+List* list_append(List* l, int i);
+
+float list_average(List* l);
+
+List* list_remove_value(List* l, int v);
+
+int list_find_value_index(List* l, int v);
+
+List* list_remove_all_values(List* l, int v);
+
+List* list_remove_position(List* l, int pos);
+
+int list_content(List* l, int pos);
+
 #endif

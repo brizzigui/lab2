@@ -51,7 +51,7 @@ void main()
     printf("Lists have been concatenated. Printing!\n");
 
     list_print(hit_list_kgb);
-    printf("Lenght of concatenatds list: %d\n", list_len(hit_list_kgb));
+    printf("Lenght of concatenated list: %d\n", list_len(hit_list_kgb));
 
     List* last = list_last(hit_list_kgb);
     printf("The last element is %d.\n", last->info);
