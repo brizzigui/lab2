@@ -170,8 +170,6 @@ List* list_remove_value(List* l, int v)
         ant->prox = ptr->prox;
         free(ptr);
     }
-
-    list_print(l);
     
     return l;
 
@@ -224,6 +222,18 @@ int list_content(List* l, int pos)
     return content;
 }
 
+void list_modify(List* l, int pos, int content)
+{
+    List* ptr = l;
+    int count = 0;
+
+    while (count < pos){
+        ptr = ptr->prox;
+        count++;
+        ptr->info = content;
+    }
+}
+
 List* list_remove_position(List* l, int pos)
 {
     List* ptr = l;
@@ -246,4 +256,56 @@ List* list_remove_position(List* l, int pos)
     ant->prox = ptr->prox;
     return l;
     
+}
+
+List* list_split_by_value(List* l, int v)
+{
+    List* ptr = l;
+    while (ptr != NULL)
+    {
+        if (ptr->info == v)
+        {
+            List* l2_start = ptr->prox;
+            ptr->prox = NULL;
+            return l2_start;
+            
+        }
+        ptr = ptr->prox;
+    }
+    
+    return l;
+}
+
+List* list_intercalate(List* l1, List* l2)
+{
+    List* intercalated = list_create();
+    int idx_l1 = 0, idx_l2 = 0;
+
+    for (int i = 0; i < list_len(l1) + list_len(l2); i++)
+    {
+        if (idx_l1 < list_len(l1))
+        {
+            intercalated = list_append(intercalated, list_content(l1, idx_l1));
+            idx_l1++;
+        }
+
+        if (idx_l2 < list_len(l2))
+        {
+            intercalated = list_append(intercalated, list_content(l2, idx_l2));
+            idx_l2++;
+        }
+    }
+    
+    return intercalated;
+}
+
+void list_invert(List* l)
+{
+    List* aux = list_create();
+    for (int i = 0; i < list_len(l); i++)
+    {
+        aux = list_insert(aux, list_content(l, i));
+    }
+    
+    return aux
 }
