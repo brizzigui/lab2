@@ -15,10 +15,10 @@ void main(){
     muitos_dinheiros = list_append(muitos_dinheiros, 2);
     muitos_dinheiros = list_append(muitos_dinheiros, 2);
     muitos_dinheiros = list_append(muitos_dinheiros, 0);
-    muitos_dinheiros = list_append(muitos_dinheiros, 0);
+    muitos_dinheiros = list_append(muitos_dinheiros, 1);
     muitos_dinheiros = list_append(muitos_dinheiros, 0);
  
     list_print(muitos_dinheiros);
-    list_invert(muitos_dinheiros);
+    muitos_dinheiros = list_invert(muitos_dinheiros);
     list_print(muitos_dinheiros);
 }

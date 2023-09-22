@@ -43,6 +43,6 @@ List* list_split_by_value(List* l, int v);
 
 List* list_intercalate(List* l1, List* l2);
 
-void list_invert(List* l);
+List* list_invert(List* l);
 
 #endif

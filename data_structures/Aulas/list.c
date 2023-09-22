@@ -8,6 +8,7 @@
 #include "list.h"
 
 // use to compile: "gcc file.c ../list.c -o file.exe"
+// "library" of list functions for data structures class
 
 List* list_insert(List* l, int info)
 {
@@ -254,6 +255,7 @@ List* list_remove_position(List* l, int pos)
     }
 
     ant->prox = ptr->prox;
+    free(ptr);
     return l;
     
 }
@@ -299,13 +301,20 @@ List* list_intercalate(List* l1, List* l2)
     return intercalated;
 }
 
-void list_invert(List* l)
+List* list_invert(List* l)
 {
-    List* aux = list_create();
-    for (int i = 0; i < list_len(l); i++)
+    List* ant = NULL;
+    List* aux;
+    List* ptr = l;
+
+    while (ptr != NULL)
     {
-        aux = list_insert(aux, list_content(l, i));
+        aux = ptr->prox;
+        ptr->prox = ant;
+        ant = ptr;
+        ptr = aux;
     }
+
+    return ant;
     
-    return aux
 }

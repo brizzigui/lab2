@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "list.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "string.h": "c",
+        "list_double.h": "c"
     }
 }
