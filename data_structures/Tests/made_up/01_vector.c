@@ -37,6 +37,12 @@ int pop(Pilha* p)
 
 bool compara(Pilha* p1, Pilha* p2)
 {
+    if (p1->n == 0 || p2->n == 0)
+    {
+        printf("Nao ha elementos\n");
+        return false;
+    }
+    
     int aux1 = pop(p1);
     int aux2 = pop(p2);
 
@@ -70,10 +76,10 @@ void main()
 
 
     push(p1, 10);
-    push(p2, 10);
     push(p1, 20);
-    push(p2, 10);
     push(p1, 30);
+    push(p2, 10);
+    push(p2, 10);
     push(p2, 30);
     
     print(p1);
