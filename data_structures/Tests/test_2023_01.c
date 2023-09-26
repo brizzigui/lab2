@@ -182,8 +182,8 @@ void main(){
     // parte 2
     Lista* l = NULL;
 
-    l = lst_insere(l, 999, "lula", 5);
-    l = lst_insere(l, 999, "bolsonaro", 1);
+    l = lst_insere(l, 999, "lula", 1);
+    l = lst_insere(l, 999, "bolsonaro", 2);
     l = lst_insere(l, 999, "stalin", 3);
     l = lst_insere(l, 999, "kim", 2);
     l = lst_insere(l, 999, "mao", 1);
