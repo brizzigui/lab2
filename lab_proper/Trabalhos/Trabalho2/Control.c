@@ -35,6 +35,7 @@ int main(){
         }
     }
     
+    freeMatrix(m, matrix);
     return 0;
 }
 

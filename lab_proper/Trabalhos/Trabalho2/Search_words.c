@@ -36,10 +36,10 @@ bool find_horizontal_direct(int m, int n, char* requested_word, char** mat, stru
 {
     for (int i = 0; i < m; i++)
     {
-        for (int j = 0; j <= n-strlen(requested_word); j++)
+        for (int j = 0; j <= n-(int)strlen(requested_word); j++)
         {
             int count = 0;
-            for (int k = j; k-j < strlen(requested_word); k++)
+            for (int k = j; k-j < (int)strlen(requested_word); k++)
             {
                 if(mat[i][k] == requested_word[k-j])
                 {
@@ -78,10 +78,10 @@ bool find_vertical_direct(int m, int n, char* requested_word, char** mat, struct
 {
     for (int j = 0; j < n; j++)
     {
-        for (int i = 0; i <= m-strlen(requested_word); i++)
+        for (int i = 0; i <= m-(int)strlen(requested_word); i++)
         {
             int count = 0;
-            for (int k = i; k-i < strlen(requested_word); k++)
+            for (int k = i; k-i < (int)strlen(requested_word); k++)
             {
                 if(mat[k][j] == requested_word[k-i])
                 {
@@ -127,7 +127,7 @@ bool find_primary_diagonal_direct(int m, int n, char* requested_word, char** mat
         for (int j = 0; j < n; j++)
         {   
             int count = 0;
-            for (int x = i, y = j; x < m && y < n && x-i < strlen(requested_word) && y-j < strlen(requested_word); x++, y++)
+            for (int x = i, y = j; x < m && y < n && x-i < (int)strlen(requested_word) && y-j < (int)strlen(requested_word); x++, y++)
             {
                 if(mat[x][y] == requested_word[x-i])
                 {
@@ -173,7 +173,7 @@ bool find_secondary_diagonal_direct(int m, int n, char* requested_word, char** m
         for (int j = 0; j < n; j++)
         {   
             int count = 0;
-            for (int x = i, y = j; x < m && y >= 0 && x-i < strlen(requested_word) && j-y < strlen(requested_word); x++, y--)
+            for (int x = i, y = j; x < m && y >= 0 && x-i < (int)strlen(requested_word) && j-y < (int)strlen(requested_word); x++, y--)
             {
                 if(mat[x][y] == requested_word[x-i])
                 {
@@ -280,7 +280,7 @@ void find_word(int m, int n, char* requested_word, char** mat)
     {
         printf("I'm so sorry, comrade! :( \n");
         printf("I couldn't find the word you're looking for...\n");
-        printf("Please, don't rat out my wrongdoing to the chairman!\n");
+        printf("Long live to the chairman!\n");
     }
 
 }
