@@ -1,0 +1,14 @@
+1. part A
+
+Percurso pré-ordem:
+
+    A, B, C, D, E, G, I, F, H, J
+
+Percurso simétrico:
+
+    A, B, I, G, E, D, F, J, H, C
+
+Percurso pós-ordem:
+    
+    I, G, E, J, H, F, D, C, B, A
+

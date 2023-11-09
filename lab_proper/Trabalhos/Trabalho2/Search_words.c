@@ -17,16 +17,15 @@ char* get_word(int m, int n){
         max_dimension = n;
     }
 
-    char* requested_word;
+    char *requested_word = (char *)malloc(128*sizeof(char));
     printf("Insert the word you want to search for: ");
-    scanf("%ms", &requested_word); 
+    scanf("%s", requested_word); 
 
     while (strlen(requested_word) > max_dimension)
     {
-        free(requested_word);
         printf("Use a shorter word, mate!\n");
         printf("Insert the word you want to search for: ");
-        scanf("%ms", &requested_word); 
+        scanf("%s", requested_word); 
     }
 
     return requested_word;
