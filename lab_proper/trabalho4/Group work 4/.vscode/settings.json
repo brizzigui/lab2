@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "time.h": "c",
-        "stdbool.h": "c",
-        "fila.h": "c",
-        "pilha.h": "c"
-    }
-}
